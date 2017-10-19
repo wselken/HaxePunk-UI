@@ -1,6 +1,6 @@
 package haxepunk.ui;
 
-import haxepunk.graphics.Text;
+import haxepunk.graphics.text.Text;
 import haxepunk.ui.TextField;
 
 import haxepunk.ui.skin.Skin;

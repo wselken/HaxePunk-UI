@@ -6,7 +6,6 @@ import flash.text.TextFormatAlign;
 import openfl.Assets;
 import haxepunk.HXP;
 import haxepunk.Graphic;
-import haxepunk.RenderMode;
 import haxepunk.graphics.atlas.AtlasData;
 import haxepunk.ui.skin.Skin;
 import haxepunk.ui.skin.SkinButtonElement;
@@ -115,16 +114,7 @@ class Default extends Skin
 		_r.width = w;
 		_r.height = h;
 
-		if (HXP.renderMode == RenderMode.BUFFER)
-		{
-			var b:BitmapData = new BitmapData(w, h, true, 0);
-			b.copyPixels(Assets.getBitmapData(img), _r, HXP.zero, null, null, true);
-			return b;
-		}
-		else
-		{
 			return AtlasData.getAtlasDataByName(img, true).createRegion(_r);
-		}
 	}
 
 	var _r:Rectangle = new Rectangle();

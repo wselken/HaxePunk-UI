@@ -1,7 +1,7 @@
 package haxepunk.ui;
 
 import flash.text.TextFormatAlign;
-import haxepunk.graphics.Text;
+import haxepunk.graphics.text.Text;
 import haxepunk.ui.UIComponent;
 import haxepunk.ui.skin.Skin;
 

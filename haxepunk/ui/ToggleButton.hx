@@ -4,7 +4,7 @@ import flash.text.TextFormatAlign;
 import haxepunk.Graphic;
 import haxepunk.graphics.Graphiclist;
 import haxepunk.graphics.Image;
-import haxepunk.graphics.Text;
+import haxepunk.graphics.text.Text;
 import haxepunk.ui.skin.Skin;
 import haxepunk.ui.skin.SkinImage;
 import haxepunk.ui.skin.SkinToggleButtonElement;

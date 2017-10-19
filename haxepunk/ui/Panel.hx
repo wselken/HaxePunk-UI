@@ -11,7 +11,7 @@ import haxepunk.Graphic;
 import haxepunk.graphics.Graphiclist;
 import haxepunk.tweens.misc.MultiVarTween;
 import haxepunk.utils.Ease;
-import haxepunk.utils.MathUtil;
+import haxepunk.math.MathUtil;
 import haxepunk.ui.skin.Skin;
 
 /**
@@ -144,7 +144,7 @@ class Panel extends UIComponent
 		var index:Int = Lambda.indexOf(_children, uiComponent);
 		if (index < 0) return uiComponent;
 		_children.splice(index, 1);
-		uiComponent.renderTarget = null;
+		//uiComponent.renderTarget = null;
 		uiComponent.removed();
 		uiComponent._panel = null;
 		return uiComponent;
@@ -159,7 +159,7 @@ class Panel extends UIComponent
 		{
 			if (!uiComponent.active)     continue;
 
-			uiComponent.updateTweens();
+			uiComponent.updateTweens(1);
 			uiComponent.update();
 			if (uiComponent.graphic != null && uiComponent.graphic.active)
 			{
@@ -190,9 +190,9 @@ class Panel extends UIComponent
 		bounds.height = height;
 	}
 
-	override public function render():Void
+	override public function render(camera:Camera):Void
 	{
-		super.render();
+		super.render(camera);
 
 		buffer.fillRect(HXP.bounds, 0x00000000);
 
@@ -215,14 +215,14 @@ class Panel extends UIComponent
 		{
 			if (!uiComponent.visible) continue;
 
-			if (uiComponent._camera != null)
+/*			if (uiComponent._camera != null)
 			{
 				uiComponent._camera.x = uiComponent._camera.y = 0;
 			}
-			else uiComponent._camera = new Point();
+			else uiComponent._camera = new Point();*/
 
-			uiComponent.renderTarget = buffer;
-			uiComponent.render();
+		//	uiComponent.renderTarget = buffer;
+			uiComponent.render(camera);
 		}
 
 		HXP.point.x = relativeX - HXP.camera.x;
@@ -231,8 +231,8 @@ class Panel extends UIComponent
 		bounds.x = x;
 		bounds.y = y;
 
-		var t:BitmapData = (renderTarget != null) ? renderTarget : HXP.buffer;
-		t.copyPixels(buffer, bounds, HXP.point);
+		//var t:BitmapData =  HXP.buffer;
+		//t.copyPixels(buffer, bounds, HXP.point);
 	}
 
 	/**
@@ -259,15 +259,7 @@ class Panel extends UIComponent
 		return graphiclist.add(graphic);
 	}
 
-	/**
-	 * Remove a Graphic from the panel
-	 * @param	graphic Graphic to remove
-	 * @return the Graphic removed from the panel
-	 */
-	public function removeGraphic(graphic:Graphic):Graphic
-	{
-		return graphiclist.remove(graphic);
-	}
+
 
 	/**
 	 * Return the vector containing all child UIComponents

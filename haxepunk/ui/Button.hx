@@ -6,7 +6,7 @@ import haxepunk.Graphic;
 import haxepunk.Mask;
 import haxepunk.graphics.Graphiclist;
 import haxepunk.graphics.Image;
-import haxepunk.graphics.Text;
+import haxepunk.graphics.text.Text;
 import haxepunk.input.Input;
 import haxepunk.ui.UIComponent;
 import haxepunk.ui.skin.SkinButtonElement;

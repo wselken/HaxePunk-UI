@@ -2,7 +2,7 @@ package haxepunk.ui;
 
 import haxepunk.Graphic;
 import haxepunk.graphics.Image;
-import haxepunk.utils.Input;
+import haxepunk.input.Input;
 import haxepunk.ui.skin.Skin;
 
 /**

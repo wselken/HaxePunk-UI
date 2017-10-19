@@ -12,7 +12,7 @@ import haxepunk.ui.skin.SkinImage;
 /**
  * Base class for all Punk.UI components
  */
-class UIComponent extends Entity
+class UIComponent extends CustomEntity
 {
 	public static inline var DEFAULT_TYPE:String = "UI";
 

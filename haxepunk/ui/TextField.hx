@@ -1,12 +1,12 @@
 package haxepunk.ui;
 
-import haxepunk.graphics.Text;
+import haxepunk.graphics.text.Text;
 import haxepunk.ui.skin.Skin;
 
 /**
  * A single line TextArea.
  */
-@:access(haxepunk.graphics.Text)
+@:access(haxepunk.graphics.text.Text)
 class TextField extends TextArea
 {
 	/**
